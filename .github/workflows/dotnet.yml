@@ -8,7 +8,7 @@ on:
 
 jobs:  
   build:    
-    runs-on: windows-latest
+    runs-on: [self-hosted, windows]
     
     steps:      
       - uses: actions/checkout@v2
@@ -17,8 +17,8 @@ jobs:
         run: cd $GITHUB_WORKSPACE
 
       - name: Restore Packages
-        run: nuget restore Sandbox.sln
+        run: nuget restore ./SelfHostRunner/SelfHostRunner.sln
 
       - name: Build Solution
         run: |
-          msbuild.exe SelfHostRunner.sln /p:platform="Any CPU" /p:configuration="Release"
+          msbuild.exe ./SelfHostRunner/SelfHostRunner.sln /p:platform="Any CPU" /p:configuration="Release"
