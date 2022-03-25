@@ -15,13 +15,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1
 
       - name: Build Solution
-        run: |
-          dotnet build ./SelfHostRunner/SelfHostRunner.sln -c Release
-
-      - name: Clear
         env:
-          DIR: ${{ runner.workspace }}
+          TOPSECRET: ${{ Prod.TOPSECRET }}
         run: |
-          cd $DIR
-          cd ..
-          rm -r *
+          dotnet build ./$TOPSECRET/SelfHostRunner.sln -c Release
