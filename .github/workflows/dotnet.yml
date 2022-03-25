@@ -16,6 +16,6 @@ jobs:
 
       - name: Build Solution
         env:
-          TOPSECRET: ${{ Prod.TOPSECRET }}
+          TOPSECRET: ${{ secrets.TOPSECRET }}
         run: |
           dotnet build ./$TOPSECRET/SelfHostRunner.sln -c Release
