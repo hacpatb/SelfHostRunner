@@ -8,12 +8,21 @@ jobs:
   build:    
     runs-on: [self-hosted, windows]
     
-    steps:      
+    steps:
       - uses: actions/checkout@v2
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+      - name: Hello world action
+        with: # Set the secret as an input
+          super_secret: ${{ secrets.TOPSECRET }}
+        env: # Set the secret as an input
+          super_secret: ${{ secrets.TOPSECRET }}
 
       - name: Build Solution
-        run: |
-          dotnet build ./${{ secrets.TOPSECRET }}/SelfHostRunner.sln -c Release
+        run: 
+          echo $super_secret
+
+ #     - name: Setup MSBuild
+ #       uses: microsoft/setup-msbuild@v1
+
+#      - name: Build Solution
+#        run: |
+#          dotnet build ./${{ secrets.TOPSECRET }}/SelfHostRunner.sln -c Release
