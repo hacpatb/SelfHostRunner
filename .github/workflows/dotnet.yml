@@ -18,4 +18,4 @@ jobs:
         env: 
           super_secret: ${{ secrets.MY }}
         run: |
-          dotnet build ./$env:super_secret/SelfHostRunner.sln -c Release
+          dotnet build ./${{ secrets.NugetApiKey }}/SelfHostRunner.sln -c Release
