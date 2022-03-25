@@ -16,11 +16,8 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
-
       - name: Restore Packages
-        run: nuget restore ./SelfHostRunner/SelfHostRunner.sln
+        run: dotnet restore ./SelfHostRunner/SelfHostRunner.sln
 
       - name: Build Solution
         run: |
