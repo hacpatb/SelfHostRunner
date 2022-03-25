@@ -14,3 +14,10 @@ jobs:
           super_secret: ${{ secrets.MYSEC }}
         run: 
           echo "$env:super_secret"
+
+# Use a GitHub Actions secret variable in a bash shell
+      - name: Step 2 - GitHub Action if statement (true)
+        env: 
+          WHO_TO_TRUST: ${{ secrets.MYSEC }}
+        if:  env.WHO_TO_TRUST == 'MySex'
+        run: echo "I know what the secret token is!"
