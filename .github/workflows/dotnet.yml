@@ -9,7 +9,6 @@ jobs:
     runs-on: [self-hosted, windows]
     
     steps:
-      - name: Hello world action
       - shell: pwsh
         env: # Set the secret as an input
           super_secret: ${{ secrets.TOPSECRET }}
