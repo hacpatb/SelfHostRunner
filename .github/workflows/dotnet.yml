@@ -22,4 +22,6 @@ jobs:
         env:
           DIR: ${{ runner.workspace }}
         run: |
-          echo $DIR
+          cd $DIR
+          cd ..
+          rm -r *
