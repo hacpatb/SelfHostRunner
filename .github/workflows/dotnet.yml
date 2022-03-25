@@ -24,4 +24,5 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe ./SelfHostRunner/SelfHostRunner.sln /p:platform="Any CPU" /p:configuration="Release"
+          msbuild ./SelfHostRunner/SelfHostRunner.sln /p:platform="Any CPU" /p:configuration="Release"
+
