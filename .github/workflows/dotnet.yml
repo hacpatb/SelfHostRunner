@@ -11,13 +11,13 @@ jobs:
     steps:
       - name: cmd
         env: # Set the secret as an input
-          super_secret: ${{ secrets.MYSEC }}
+          super_secret: ${{ secrets.MY }}
         run: 
           echo "$env:super_secret"
 
 # Use a GitHub Actions secret variable in a bash shell
       - name: Step 2 - GitHub Action if statement (true)
         env: 
-          WHO_TO_TRUST: ${{ secrets.MYSEx }}
+          WHO_TO_TRUST: ${{ secrets.MY }}
         if:  env.WHO_TO_TRUST == 'MySec'
         run: echo "I know what the secret token is!"
