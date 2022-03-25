@@ -19,5 +19,5 @@ jobs:
       - name: Step 2 - GitHub Action if statement (true)
         env: 
           WHO_TO_TRUST: ${{ secrets.MYSEC }}
-        if:  env.WHO_TO_TRUST == 'MySex'
+        if:  env.WHO_TO_TRUST == 'MySec'
         run: echo "I know what the secret token is!"
