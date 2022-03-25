@@ -1,0 +1,17 @@
+# git ignore file
+**/bin/
+**/obj/
+*.suo
+*.vsp
+*.vs
+Solution/RetailOfficeSolution/FRLibSetup/Debug/*
+Solution/RetailOfficeSolution/FRLibSetup/Release/*
+Solution/RetailOfficeSolution/packages/
+*ReSharper*
+Solution/RetailOfficeSolution/UpgradeLog.htm
+*DotSettings.user
+Debug/
+Deploy/
+Release/
+/Solution/RetailOfficeSolution/UpgradeLog2.htm
+*.DotSettings
