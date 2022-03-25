@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: cmd
         env: # Set the secret as an input
-          super_secret: ${{ secrets.TOPSECRET }}
+          super_secret: ${{ secrets.MYSEC }}
         run: 
           echo "$env:super_secret"
