@@ -3,8 +3,6 @@ name: Build
 on:  
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:  
   build:    
@@ -16,10 +14,10 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
-      - name: Restore Packages
-        run: dotnet restore ./SelfHostRunner/SelfHostRunner.sln
+      - name: Build Solution
+        run: |
+          dotnet build ./SelfHostRunner/SelfHostRunner.sln -c Release
 
       - name: Build Solution
         run: |
-          dotnet msbuild ./SelfHostRunner/SelfHostRunner.sln /p:platform="Any CPU" /p:configuration="Release"
-
+          echo $RUNNER_WORKSPACE
