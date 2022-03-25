@@ -18,6 +18,8 @@ jobs:
         run: |
           dotnet build ./SelfHostRunner/SelfHostRunner.sln -c Release
 
-      - name: Build Solution
+      - name: Clear
+        env:
+          DIR: ${{ runner.workspace }}
         run: |
-          echo $RUNNER_WORKSPACE
+          echo $DIR
