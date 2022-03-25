@@ -10,6 +10,8 @@ namespace SelfHostRunner
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"Hello {Environment.OSVersion}");
+            Console.ReadKey();
         }
     }
 }
