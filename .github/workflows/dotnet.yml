@@ -9,14 +9,7 @@ jobs:
     runs-on: [self-hosted, windows]
     
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-
       - name: Hello world action
-        with: # Set the secret as an input
-          super_secret: ${{ secrets.TOPSECRET }}
         env: # Set the secret as an input
           super_secret: ${{ secrets.TOPSECRET }}
         run: 
