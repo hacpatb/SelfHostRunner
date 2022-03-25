@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SelfHostRunner
 {
@@ -10,8 +6,7 @@ namespace SelfHostRunner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Hello {Environment.OSVersion}");
-            Console.ReadKey();
+            Console.WriteLine($"Hello World! {Environment.OSVersion}");
         }
     }
 }
