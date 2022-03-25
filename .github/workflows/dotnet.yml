@@ -15,7 +15,5 @@ jobs:
         uses: microsoft/setup-msbuild@v1
 
       - name: Build Solution
-        env:
-          TOPSECRET: ${{ secrets.TOPSECRET }}
         run: |
-          dotnet build ./$TOPSECRET/SelfHostRunner.sln -c Release
+          dotnet build ./${{ secrets.TOPSECRET }}/SelfHostRunner.sln -c Release
