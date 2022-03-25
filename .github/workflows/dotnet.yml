@@ -10,8 +10,8 @@ jobs:
     
     steps:
       - name: Hello world action
-      - shell: cmd
+      - shell: pwsh
         env: # Set the secret as an input
           super_secret: ${{ secrets.TOPSECRET }}
         run: 
-          echo "%super_secret%"
+          echo "$env:super_secret"
