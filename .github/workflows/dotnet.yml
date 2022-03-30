@@ -19,6 +19,11 @@ jobs:
           super_secret: ${{ secrets.MY }}
         run: |
           dotnet build ./${{ secrets.MY }}/SelfHostRunner.sln -c Release
+      
+      - name: Error step
+        run: | 
+          exit 1
+
       - name: Clear runner
         run: 
           rm .\* -r -force
