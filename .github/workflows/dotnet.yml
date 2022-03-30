@@ -12,17 +12,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+        uses: actions/setup-dotnet@2
 
       - name: Build Solution
         env:
           super_secret: ${{ secrets.MY }}
         run: |
           dotnet build ./$env:super_secret/SelfHostRunner.sln -c Release
-      
-      - name: Error step
-        run: | 
-          exit 1
 
       - name: Clear runner
         if: ${{ always() }}
