@@ -18,7 +18,7 @@ jobs:
         env:
           super_secret: ${{ secrets.MY }}
         run: |
-          dotnet build ./${{ secrets.MY }}/SelfHostRunner.sln -c Release
+          dotnet build ./$env:super_secret/SelfHostRunner.sln -c Release
       
       - name: Error step
         run: | 
@@ -26,5 +26,5 @@ jobs:
 
       - name: Clear runner
         if: ${{ always() }}
-        run: 
+        run: |
           rm .\* -r -force
