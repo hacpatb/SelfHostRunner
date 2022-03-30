@@ -15,3 +15,4 @@ Deploy/
 Release/
 /Solution/RetailOfficeSolution/UpgradeLog2.htm
 *.DotSettings
+*.vscode/*
