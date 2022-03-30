@@ -27,4 +27,4 @@ jobs:
       - name: Clear runner
         if: ${{ always() }}
         run: |
-          rm .\* -r -force
+          rm ./* -r -force
