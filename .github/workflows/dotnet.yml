@@ -25,5 +25,6 @@ jobs:
           exit 1
 
       - name: Clear runner
+        if: ${{ always() }}
         run: 
           rm .\* -r -force
