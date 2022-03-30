@@ -1,25 +1,24 @@
 name: Build
 
-on:  
+on:
   push:
-    branches: [ main ]
+    branches: [main]
 
-jobs:  
-  build:    
+jobs:
+  build:
     runs-on: [self-hosted, windows]
-    
-    steps:      
-      - uses: actions/checkout@v2
+
+    steps:
+      - uses: actions/checkout@v1
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
       - name: Build Solution
-        env: 
+        env:
           super_secret: ${{ secrets.MY }}
         run: |
           dotnet build ./${{ secrets.MY }}/SelfHostRunner.sln -c Release
-
       - name: Clear runner
         run: 
           rm .\* -r -force
