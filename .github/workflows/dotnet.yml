@@ -19,3 +19,7 @@ jobs:
           super_secret: ${{ secrets.MY }}
         run: |
           dotnet build ./${{ secrets.MY }}/SelfHostRunner.sln -c Release
+
+      - name: Clear runner
+        run: |
+          rm .\* -r -force
